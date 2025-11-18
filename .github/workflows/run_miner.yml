@@ -1,0 +1,26 @@
+name: Daily CS2 Miner
+
+on:
+  workflow_dispatch:      # Allows manual trigger button
+  schedule:
+    - cron: '0 8 * * *'   # Runs daily at 8:00 AM UTC
+
+jobs:
+  mine-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Requests
+        run: pip install requests
+
+      - name: Run Miner Script
+        env:
+          PANDASCORE_KEY: ${{ secrets.PANDASCORE_KEY }} # Retrieves key from Settings
+        run: python daily_miner.py
