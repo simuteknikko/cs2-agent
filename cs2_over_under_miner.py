@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 
 # ================= CONFIG =================
-PANDASCORE_KEY = "YOUR_PANDASCORE_KEY"
+PANDASCORE_KEY = R-0DY5A1i_itFfqLchfQIJauoV5Lfy90Y1CKRQmtfa7_dAogs_U
 HISTORY_DEPTH = 30  # Analyze last 30 matches
 # ==========================================
 
@@ -142,4 +142,5 @@ if __name__ == "__main__":
     # Gemini is smart enough to do: 13+11 = 24 (Over).
     print("Please use the 'Deep Miner' script provided in the previous step.")
     print("The 'Last 5 Matches' section contains the exact scores (e.g., 13-11).")
+
     print("Gemini will automatically calculate Over/Under probabilities from those scores.")
